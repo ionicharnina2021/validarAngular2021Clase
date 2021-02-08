@@ -22,7 +22,7 @@
       <ion-label
         *ngIf="ejemploForm.get('nombreEntrada').errors.minLength"
       ></ion-label>
-      error de longitud
+      {{validationMessages.nameInput.minlength}}
     </ion-item>
   </form>
 </ion-content>
