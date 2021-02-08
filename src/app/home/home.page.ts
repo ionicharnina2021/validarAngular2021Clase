@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  constructor() {}
+  //Crear un grupo de controles de formulario Angular
+  ejemploForm:FormGroup;
+  nombre:string;
+  constructor() {
+    this.ejemploForm=new FormGroup({
+      nombreEntrada:new FormControl('',Validators.minLength(3))
+    });
+  }
 
 }
