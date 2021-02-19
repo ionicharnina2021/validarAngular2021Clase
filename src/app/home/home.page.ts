@@ -10,11 +10,12 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class HomePage {
   //Crear un grupo de controles de formulario Angular
   ejemploForm: FormGroup;
-  validationMessages;
+  nombreControles:Array<string>;
   nombre: string;
+
   constructor(private homeControlService: HomeControlService) {
-    this.ejemploForm = this.homeControlService.ejemploForm;
-    this.validationMessages = this.homeControlService.validationMessages;
+    this.ejemploForm=this.homeControlService.getFormGroup();
+    this.nombreControles=this.homeControlService.getNombreControles();
   }
   getErrorMessage(control, error) {
     return this.homeControlService.getErrorMessage(control, error);

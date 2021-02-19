@@ -6,22 +6,9 @@
 
 <ion-content [fullscreen]="true">
   <!-- ES una etiqueta de Angular -->
-  <form [formGroup]="ejemploForm">
-    <ion-item>
-      <ion-label floating>Name:</ion-label>
-      <ion-input
-        [(ngModel)]="nombre"
-        formControlName="nombreEntrada"
-      ></ion-input>
-      <ion-label>is dirty {{ejemploForm.get('nombreEntrada').dirty}}</ion-label>
-      <ion-label>is valid {{ejemploForm.get('nombreEntrada').valid}}</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label
-        *ngIf="ejemploForm.get('nombreEntrada').dirty && !ejemploForm.get('nombreEntrada').valid"
-      >{{getErrorMessage('nombreEntrada',ejemploForm.get('nombreEntrada').errors)}}
-        <!-- {{ejemploForm.get('nombreEntrada').errors.minlength|json}} -->
-      </ion-label>
+  <form [formGroup]="ejemploForm" *ngFor="let item of nombreControles">
+    <ion-item >
+      <ion-label>{{item}}</ion-label>
     </ion-item>
   </form>
 </ion-content>
