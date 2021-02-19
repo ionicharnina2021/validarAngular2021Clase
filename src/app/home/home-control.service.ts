@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
-import { FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import {
+ FormControl, 
+  FormGroup,
+  ValidationErrors,
+  Validators,
+} from '@angular/forms';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +21,7 @@ export class HomeControlService {
       telefonoMovil: new FormControl('', Validators.pattern('.')),
     });
   }
-  getErrorMessage(control, error:ValidationErrors) {
-   return this.validationMessages.get(control).get(Object.keys(error)[0]);
+  getErrorMessage(control, error: ValidationErrors) {
+    return this.validationMessages.get(control).get(Object.keys(error)[0]);
   }
 }
