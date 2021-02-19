@@ -18,10 +18,9 @@
     </ion-item>
     <ion-item>
       <ion-label
-        *ngIf="get('nombreEntrada').dirty && !ejemploForm.get('nombreEntrada').valid"
-      >
-        <!-- {{getErrorMessage('nombreEntrada',ejemploForm.get('nombreEntrada').errors)}} -->
-        {{ejemploForm.get('nombreEntrada').errors.minlength|json}}
+        *ngIf="ejemploForm.get('nombreEntrada').dirty && !ejemploForm.get('nombreEntrada').valid"
+      >{{getErrorMessage('nombreEntrada',ejemploForm.get('nombreEntrada').errors)}}
+        <!-- {{ejemploForm.get('nombreEntrada').errors.minlength|json}} -->
       </ion-label>
     </ion-item>
   </form>

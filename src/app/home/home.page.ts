@@ -20,8 +20,5 @@ export class HomePage {
     return this.homeControlService.getErrorMessage(control, error);
   }
 
-  get(nombre){
-    let servicio=this.ejemploForm.get(nombre);
-    return servicio;
-  }
+ 
 }
